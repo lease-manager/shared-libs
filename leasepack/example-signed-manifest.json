@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "leasesigned:v1",
+  "contractId": "3f2b8c1e-5a47-4d0e-9a53-0c1d2e3f4a5b",
+  "originalPdfSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "signedPdfSha256": "1111111111111111111111111111111111111111111111111111111111111111",
+  "signedAt": "2026-11-01T10:00:00Z",
+  "signerName": "Max Mustermann",
+  "deviceInfo": "Android 14 / Pixel 7"
+}
