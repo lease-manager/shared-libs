@@ -11,7 +11,7 @@ Common rules: UTF-8 JSON, exactly the listed entries (no directories, no duplica
 
 | Entry | Content |
 |---|---|
-| `manifest.json` | `schemaVersion`, `contractId` (UUID), `createdAt` (ISO-8601 instant), `originalPdfSha256`, `contractName`, `contractJson` (string, desktop-internal contract data), `packageSignature` |
+| `manifest.json` | `schemaVersion`, `contractId` (UUID), `createdAt` (ISO-8601 instant), `originalPdfSha256`, `contractName`, `contractJson` (string, desktop-internal contract data; JSON, older packages use a legacy field format), `packageSignature` |
 | `contract.pdf` | Original, stamped PDF (QR code + metadata `LeaseContractId`, `LeaseContentHash`) |
 
 `packageSignature` is an HMAC-SHA-256 with a key local to one desktop installation. Mobile apps
