@@ -55,3 +55,13 @@ The signed PDF need not keep the original metadata (mobile apps may flatten page
 the QR code stays visible on the page.
 
 Example manifest: [`example-signed-manifest.json`](example-signed-manifest.json).
+
+## Wi-Fi transfer (phone -> desktop)
+
+The desktop can receive returns in the local network while its "Receive over Wi-Fi" window is open. It shows the
+URL(s) as text and QR code (`http://<ip>:48765/return`; another port is used if 48765 is taken).
+The phone sends the `.leasesigned` file as raw body of `POST <url>` (`Content-Length` set, <= ~51 MiB).
+Responses: `200` imported, `422` refused (not signed by a paired device, unknown contract, wrong status, hash
+mismatch ...), `413` too large, `405` other methods. There is no authentication besides the signature inside the
+file, so the endpoint cannot be abused to import anything the normal file import would reject; the data travels in
+plain HTTP inside the local network (the PDF is not secret, but it contains personal contract data).
